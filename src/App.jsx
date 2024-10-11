@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Card from "./components/Card";
-import { address } from "framer-motion/client";
 import { Header } from "./components/Header";
 
 function App() {
@@ -14,7 +13,15 @@ function App() {
       contact: "11977589364",
       data: "Quinta",
       time: "21h",
-      address: "Rua Dona Tecla, 230 - Jardim Flôr da Montanha",
+      address: "230, Rua Dona Tecla, Guarulhos",
+      addressDetails: {
+        street: "Rua Dona Tecla",
+        number: "230",
+        neighborhood: "Jardim Flôr da Montanha",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: true,
     },
     {
@@ -24,7 +31,15 @@ function App() {
       contact: "11977738669",
       data: "Quinta",
       time: "20h",
-      address: "Rua Laranjal, 87 - Jardim Bela Vista",
+      address: "87, Rua Laranjal, Guarulhos",
+      addressDetails: {
+        street: "Rua Laranjal",
+        number: "87",
+        neighborhood: "Jardim Bela Vista",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: false,
     },
     {
@@ -34,7 +49,15 @@ function App() {
       contact: "11967760016",
       data: "Quinta",
       time: "20h",
-      address: "Avenida Antônio de Souza, 779 - Jardim Santa Francisca",
+      address: "779, Avenida Antônio de Souza, Guarulhos",
+      addressDetails: {
+        street: "Avenida Antônio de Souza",
+        number: "779",
+        neighborhood: "Jardim Santa Francisca",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: false,
     },
     {
@@ -44,7 +67,15 @@ function App() {
       contact: "11947742157",
       data: "Quinta",
       time: "20h",
-      address: "Avenida Antônio de Souza, 779 - Jardim Santa Francisca",
+      address: "779, Avenida Antônio de Souza, Guarulhos",
+      addressDetails: {
+        street: "Avenida Antônio de Souza",
+        number: "779",
+        neighborhood: "Jardim Santa Francisca",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: false,
     },
     {
@@ -54,7 +85,15 @@ function App() {
       contact: "11974476721",
       data: "Quinta",
       time: "20h",
-      address: "Avenida Antônio de Souza, 779 - Jardim Santa Francisca",
+      address: "779, Avenida Antônio de Souza, Guarulhos",
+      addressDetails: {
+        street: "Avenida Antônio de Souza",
+        number: "779",
+        neighborhood: "Jardim Santa Francisca",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: false,
     },
     {
@@ -64,7 +103,15 @@ function App() {
       contact: "11980330860",
       data: "Quinta",
       time: "20h",
-      address: "Avenida Antônio de Souza, 779 - Jardim Santa Francisca",
+      address: "779, Avenida Antônio de Souza, Guarulhos",
+      addressDetails: {
+        street: "Avenida Antônio de Souza",
+        number: "779",
+        neighborhood: "Jardim Santa Francisca",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: false,
     },
     {
@@ -74,8 +121,15 @@ function App() {
       contact: "11994030417",
       data: "Quinta",
       time: "20h",
-      address:
-        "Av. Sargento da aeronaútica Plínio Fernandes Gonçalves, 1670 - APTO 42 Bloco 4 Fiumicino",
+      address: "1670, Avenida Sargento Plinio Fernandes Gonçalves, Guarulhos",
+      addressDetails: {
+        street: "Avenida Sargento Plinio Fernandes Gonçalves",
+        number: "1670",
+        neighborhood: "Cumbica",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
       isOnline: false,
     },
     {
@@ -86,6 +140,32 @@ function App() {
       data: "Quinta",
       time: "20h",
       address: "Online",
+      addressDetails: {
+        street: "",
+        number: "",
+        neighborhood: "",
+        city: "",
+        state: "",
+        country: "",
+      },
+      isOnline: true,
+    },
+    {
+      id: 9,
+      title: "GC Delas",
+      leaders: "Helen",
+      contact: "11941400574",
+      data: "Quinta",
+      time: "20h",
+      address: "Online",
+      addressDetails: {
+        street: "",
+        number: "",
+        neighborhood: "",
+        city: "",
+        state: "",
+        country: "",
+      },
       isOnline: true,
     },
   ];
@@ -104,6 +184,7 @@ function App() {
               data={item.data}
               time={item.time}
               address={item.address}
+              addressDetails={item.addressDetails}
               isOnline={item.isOnline}
               cta="Ver detalhes"
               selectedId={selectedId}

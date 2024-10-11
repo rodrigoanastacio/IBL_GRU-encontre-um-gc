@@ -2,8 +2,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CiCalendarDate } from "react-icons/ci";
 import { TfiLocationPin } from "react-icons/tfi";
 import { RiCloseLargeFill } from "react-icons/ri";
-
 import iconGC from "../../assets/label-gc.svg";
+
+import { Map } from "../Map";
+
 import "./style.scss";
 
 const Card = ({
@@ -13,11 +15,14 @@ const Card = ({
   data,
   time,
   address,
+  addressDetails,
   isOnline,
   cta,
   selectedId,
   setSelectedId,
 }) => {
+  const fullAddress = `${addressDetails.street}, ${addressDetails.number}, ${addressDetails.neighborhood}, ${addressDetails.city}`;
+
   return (
     <>
       <motion.article
@@ -53,8 +58,13 @@ const Card = ({
               </p>
               <p>
                 <TfiLocationPin size={20} />
-                {address}
+                {isOnline ? "Online" : fullAddress}
               </p>
+
+              {isOnline ? null : (
+                <Map address={address} addressDetails={addressDetails} />
+              )}
+
               <button
                 className="close-btn"
                 onClick={() => setSelectedId(null)} // Fecha o card ao clicar
