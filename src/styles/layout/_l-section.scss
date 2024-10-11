@@ -2,11 +2,7 @@
   padding: 5rem 0;
 
   &__container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    @include container();
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24.1875rem, 1fr));

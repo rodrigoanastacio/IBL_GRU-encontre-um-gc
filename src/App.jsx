@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "./components/Card";
 import { address } from "framer-motion/client";
+import { Header } from "./components/Header";
 
 function App() {
   const [selectedId, setSelectedId] = useState(null);
@@ -90,25 +91,28 @@ function App() {
   ];
 
   return (
-    <div className="l-section">
-      <div className="l-section__container">
-        {items.map((item) => (
-          <Card
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            leaders={item.leaders}
-            data={item.data}
-            time={item.time}
-            address={item.address}
-            isOnline={item.isOnline}
-            cta="Ver detalhes"
-            selectedId={selectedId}
-            setSelectedId={setSelectedId}
-          />
-        ))}
+    <>
+      <Header />
+      <div className="l-section">
+        <div className="l-section__container">
+          {items.map((item) => (
+            <Card
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              leaders={item.leaders}
+              data={item.data}
+              time={item.time}
+              address={item.address}
+              isOnline={item.isOnline}
+              cta="Ver detalhes"
+              selectedId={selectedId}
+              setSelectedId={setSelectedId}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
