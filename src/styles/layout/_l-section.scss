@@ -5,13 +5,11 @@
     @include container();
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24.1875rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 
-    // @include flex-element(column-reverse, center, center);
-
     @media (min-width: 768px) {
-      //   @include flex-element(row, center, center);
+      grid-template-columns: repeat(auto-fit, minmax(24.1875rem, 1fr));
     }
   }
 }
