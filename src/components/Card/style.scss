@@ -6,15 +6,26 @@
   border: 1px solid #e3e9f0;
   cursor: pointer;
 
-  & .label {
-    font-size: 0.75rem;
+  &__label {
     position: absolute;
     top: 8px;
     right: 8px;
+  }
+
+  & .label {
+    font-size: 0.75rem;
     background-color: #fece00;
     color: #362a25;
     padding: 4px 8px;
     border-radius: 8px;
+
+    & + .label {
+      margin-left: 5px;
+    }
+
+    &--couple {
+      background-color: #f4a7b9;
+    }
   }
 
   &__header {
@@ -22,6 +33,10 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    width: 19.375rem;
   }
 
   &--expanded {

@@ -17,6 +17,7 @@ const Card = ({
   address,
   addressDetails,
   isOnline,
+  isCouple,
   cta,
   selectedId,
   setSelectedId,
@@ -30,7 +31,10 @@ const Card = ({
         className="c-card"
         onClick={() => setSelectedId(id)}
       >
-        {isOnline && <span className="label">Online</span>}
+        <div className="c-card__label">
+          {isOnline && <span className="label">Online</span>}
+          {isCouple && <span className="label label--couple">Casal</span>}
+        </div>
         <header className="c-card__header">
           <img src={iconGC} alt="Ícone que ilustra o GC" />
           <motion.h2 className="c-card__title">{title}</motion.h2>
