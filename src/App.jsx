@@ -779,6 +779,7 @@ function App() {
               id={item.id}
               title={item.title}
               leaders={item.leaders}
+              contact={item.contact}
               data={item.data}
               time={item.time}
               address={item.address}

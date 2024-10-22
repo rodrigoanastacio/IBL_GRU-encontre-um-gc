@@ -1,0 +1,16 @@
+.c-button {
+  padding: 4px 16px;
+  width: fit-content;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &--whatsapp {
+    background-color: #25d366;
+    color: #dcf8c6;
+  }
+}

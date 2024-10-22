@@ -5,6 +5,7 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import iconGC from "../../assets/label-gc.svg";
 
 import { Map } from "../Map";
+import { Button } from "../Button";
 
 import "./style.scss";
 
@@ -12,6 +13,7 @@ const Card = ({
   id,
   title,
   leaders,
+  contact,
   data,
   time,
   address,
@@ -23,6 +25,9 @@ const Card = ({
   setSelectedId,
 }) => {
   const fullAddress = `${addressDetails.street}, ${addressDetails.number}, ${addressDetails.neighborhood}, ${addressDetails.city}`;
+
+  // Montando o link do WhatsApp dinamicamente
+  const whatsappLink = `https://api.whatsapp.com/send?phone=55${contact}&text=Ol%C3%A1%20${leaders},%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20${title}`;
 
   return (
     <>
@@ -54,6 +59,7 @@ const Card = ({
                   <small>
                     <strong>Liderança:</strong> {leaders}
                   </small>
+                  <Button link={whatsappLink} label="Contato" />
                 </div>
               </div>
               <p>
