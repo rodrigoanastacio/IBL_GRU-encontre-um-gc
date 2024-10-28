@@ -122,6 +122,25 @@ function App() {
     },
     {
       id: 7,
+      title: "GC Continental",
+      leaders: "Renato e Adriana",
+      contact: "11999430794",
+      data: "Quinta",
+      time: "20h",
+      address: "364, Rua João Genuíno Sobral, Guarulhos",
+      addressDetails: {
+        street: "Rua João Genuíno Sobral",
+        number: "364",
+        neighborhood: "Continental",
+        city: "Guarulhos",
+        state: "SP",
+        country: "Brasil",
+      },
+      isOnline: false,
+      isCouple: true,
+    },
+    {
+      id: 8,
       title: "GC Cumbica",
       leaders: "Ériton e Joyce",
       contact: "11994030417",
@@ -140,7 +159,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 8,
+      id: 9,
       title: "GC de Casais",
       leaders: "Marcelo e Andréia",
       contact: "11989285106",
@@ -159,7 +178,7 @@ function App() {
       isCouple: true,
     },
     {
-      id: 9,
+      id: 10,
       title: "GC Delas",
       leaders: "Helen",
       contact: "11941400574",
@@ -178,7 +197,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 10,
+      id: 11,
       title: "GC Delas Centro",
       leaders: "Regina",
       contact: "11947449035",
@@ -197,7 +216,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 11,
+      id: 12,
       title: "GC Delas Vila Galvão",
       leaders: "Sílvia",
       contact: "11965588253",
@@ -216,7 +235,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 12,
+      id: 13,
       title: "GC Espaço Azul",
       leaders: "Alexandre e Rosi",
       contact: "11998616845",
@@ -235,7 +254,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 13,
+      id: 14,
       title: "GC Flôr da Montanha",
       leaders: "Luíz Roberto e Daniela",
       contact: "11982056153",
@@ -254,7 +273,7 @@ function App() {
       isCouple: true,
     },
     {
-      id: 14,
+      id: 15,
       title: "GC Gopoúva",
       leaders: "Jônathan e Edna",
       contact: "11996886721",
@@ -273,7 +292,7 @@ function App() {
       isCouple: true,
     },
     {
-      id: 15,
+      id: 16,
       title: "GC Gopoúva",
       leaders: "Wagner e Roseli",
       contact: "11980804501",
@@ -292,7 +311,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 16,
+      id: 17,
       title: "GC Jardim Marilena",
       leaders: "Renato e Dayane",
       contact: "11993273260",
@@ -311,7 +330,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 17,
+      id: 18,
       title: "GC Jardim Pinhal",
       leaders: "Roger e Andréia",
       contact: "11998993296",
@@ -330,7 +349,7 @@ function App() {
       isCouple: true,
     },
     {
-      id: 18,
+      id: 19,
       title: "GC Jardim Presidente Dutra II",
       leaders: "Fábio e Márcia",
       contact: "11947021279",
@@ -349,7 +368,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 19,
+      id: 20,
       title: "GC Jardim Rossi",
       leaders: "Jorge e Marina",
       contact: "11984128831",
@@ -368,7 +387,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 20,
+      id: 22,
       title: "GC Jardim São João",
       leaders: "Sílvio e Karina",
       contact: "11970202418",
@@ -387,7 +406,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 21,
+      id: 22,
       title: "GC Jurema",
       leaders: "Thiago e Dani",
       contact: "11945006692",
@@ -406,7 +425,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 22,
+      id: 23,
       title: "GC Legacy",
       leaders: "Yago e Mariana",
       contact: "11976752545",
@@ -425,7 +444,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 23,
+      id: 24,
       title: "GC Legacy Universitário I",
       leaders: "Danilo e Arina",
       contact: "11992603434",
@@ -444,7 +463,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 24,
+      id: 25,
       title: "GC Legacy UP",
       leaders: "Jônathan e Carol",
       contact: "11947194107",
@@ -463,7 +482,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 25,
+      id: 26,
       title: "GC Misto",
       leaders: "Fabíola",
       contact: "11947194107",
@@ -482,7 +501,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 26,
+      id: 27,
       title: "GC Mulheres Sábias",
       leaders: "Alana",
       contact: "11973346667",
@@ -501,7 +520,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 27,
+      id: 28,
       title: "GC Parque Piratininga",
       leaders: "Tonny e Natalia",
       contact: "11997462920",
@@ -520,7 +539,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 28,
+      id: 29,
       title: "GC Parque Primavera",
       leaders: "Maique e Guthyane",
       contact: "11940269533",
@@ -539,7 +558,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 29,
+      id: 30,
       title: "GC Picanço",
       leaders: "Rui e Claúdia",
       contact: "11949223703",
@@ -558,7 +577,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 30,
+      id: 31,
       title: "GC Ponte Alta",
       leaders: "Tereza",
       contact: "11983659757",
@@ -577,7 +596,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 31,
+      id: 32,
       title: "GC Ponte Grande",
       leaders: "Rodrigo e Regiane",
       contact: "11960739761",
@@ -596,7 +615,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 32,
+      id: 33,
       title: "GC Presidente Dutra",
       leaders: "Danilo e Vilma",
       contact: "11989282416",
@@ -615,7 +634,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 33,
+      id: 34,
       title: "GC Rocket Braves",
       leaders: "João e Marjorie",
       contact: "11998953605",
@@ -634,7 +653,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 34,
+      id: 35,
       title: "GC Rocket Sights",
       leaders: "Weslei e Mariah",
       contact: "11988495689",
@@ -653,7 +672,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 35,
+      id: 36,
       title: "GC Rocket Strongs",
       leaders: "Léo e Ariele",
       contact: "11961785690",
@@ -672,7 +691,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 36,
+      id: 37,
       title: "GC Tupinambá",
       leaders: "João e Maria",
       contact: "11966545788",
@@ -691,7 +710,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 37,
+      id: 38,
       title: "GC UP II",
       leaders: "Leandro e Marília",
       contact: "11919239318",
@@ -710,7 +729,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 38,
+      id: 39,
       title: "GC Vila Fátima",
       leaders: "Juliano e Karine",
       contact: "11934681591",
@@ -729,7 +748,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 39,
+      id: 40,
       title: "GC Vila Hulda",
       leaders: "Robert e Amanda",
       contact: "11965848825",
@@ -748,7 +767,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 40,
+      id: 41,
       title: "GC Vila Paraíso",
       leaders: "André e Débora",
       contact: "11942853842",
