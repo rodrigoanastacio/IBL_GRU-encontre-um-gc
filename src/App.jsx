@@ -387,7 +387,7 @@ function App() {
       isCouple: false,
     },
     {
-      id: 22,
+      id: 21,
       title: "GC Jardim São João",
       leaders: "Sílvio e Karina",
       contact: "11970202418",
