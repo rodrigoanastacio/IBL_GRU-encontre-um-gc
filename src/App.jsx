@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Card from "./components/Card";
 import { Header } from "./components/Header";
+import { SearchFilter } from "./components/SearchFilter";
 
 function App() {
   const [selectedId, setSelectedId] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const items = [
     {
@@ -787,12 +789,19 @@ function App() {
     },
   ];
 
+  const filteredItems = items.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <Header />
       <div className="l-section">
         <div className="l-section__container">
-          {items.map((item) => (
+          <SearchFilter onFilterChange={setSearchTerm} />
+        </div>
+        <div className="l-section__container">
+          {filteredItems.map((item) => (
             <Card
               key={item.id}
               id={item.id}
