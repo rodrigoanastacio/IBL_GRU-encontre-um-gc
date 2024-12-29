@@ -12,20 +12,41 @@ export const NewGC = () => {
     time: "",
     isOnline: false,
     isCouple: false,
+    addressDetails: {
+      street: "",
+      number: "",
+      neighborhood: "",
+      city: "Guarulhos",
+      state: "SP",
+      country: "Brasil",
+    },
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você implementaria a lógica para salvar o novo GC
+    // Generate the full address string for Leaflet
+    const fullAddress = `${formData.addressDetails.number}, ${formData.addressDetails.street}, ${formData.addressDetails.neighborhood}, ${formData.addressDetails.city}, ${formData.addressDetails.state}, ${formData.addressDetails.country}`;
+    console.log({ ...formData, address: fullAddress });
     navigate("/dashboard/gcs");
   };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+    if (name.startsWith("address.")) {
+      const addressField = name.split(".")[1];
+      setFormData((prev) => ({
+        ...prev,
+        addressDetails: {
+          ...prev.addressDetails,
+          [addressField]: value,
+        },
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    }
   };
 
   return (
@@ -124,6 +145,50 @@ export const NewGC = () => {
             GC de Casais
           </label>
         </div>
+
+        {!formData.isOnline && (
+          <fieldset className="p-new-gc__address">
+            <legend>Endereço</legend>
+
+            <div className="p-new-gc__field">
+              <label htmlFor="address.street">Rua</label>
+              <input
+                type="text"
+                id="address.street"
+                name="address.street"
+                value={formData.addressDetails.street}
+                onChange={handleChange}
+                required={!formData.isOnline}
+              />
+            </div>
+
+            <div className="p-new-gc__row">
+              <div className="p-new-gc__field">
+                <label htmlFor="address.number">Número</label>
+                <input
+                  type="text"
+                  id="address.number"
+                  name="address.number"
+                  value={formData.addressDetails.number}
+                  onChange={handleChange}
+                  required={!formData.isOnline}
+                />
+              </div>
+
+              <div className="p-new-gc__field">
+                <label htmlFor="address.neighborhood">Bairro</label>
+                <input
+                  type="text"
+                  id="address.neighborhood"
+                  name="address.neighborhood"
+                  value={formData.addressDetails.neighborhood}
+                  onChange={handleChange}
+                  required={!formData.isOnline}
+                />
+              </div>
+            </div>
+          </fieldset>
+        )}
 
         <button type="submit" className="p-new-gc__submit">
           Criar GC
