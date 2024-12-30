@@ -1,0 +1,30 @@
+.c-dashboard-header {
+  background: white;
+  border-bottom: 1px solid #e3e9f0;
+  padding: 1rem 2rem;
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #f1f5f9;
+    }
+  }
+}
