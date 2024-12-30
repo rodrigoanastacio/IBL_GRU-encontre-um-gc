@@ -1,29 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { items } from "../../../data/items";
+import { PhoneInput } from "../../../components/PhoneInput";
 import "./styles.scss";
 
-export const NewGC = ({ onClose }) => {
-  const [formData, setFormData] = useState({
-    title: "",
-    leaders: "",
-    contact: "",
-    data: "",
-    time: "",
-    isOnline: false,
-    isCouple: false,
-    addressDetails: {
-      street: "",
-      number: "",
-      neighborhood: "",
-      city: "Guarulhos",
-      state: "SP",
-      country: "Brasil",
-    },
-  });
+export const EditGC = ({ id, onClose }) => {
+  const [formData, setFormData] = useState(null);
+
+  useEffect(() => {
+    const gc = items.find((item) => item.id === id);
+    if (gc) {
+      setFormData(gc);
+    }
+  }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const fullAddress = `${formData.addressDetails.number}, ${formData.addressDetails.street}, ${formData.addressDetails.neighborhood}, ${formData.addressDetails.city}, ${formData.addressDetails.state}, ${formData.addressDetails.country}`;
-    console.log({ ...formData, address: fullAddress });
+    console.log("GC atualizado:", formData);
     onClose();
   };
 
@@ -46,12 +38,14 @@ export const NewGC = ({ onClose }) => {
     }
   };
 
-  return (
-    <div className="p-new-gc">
-      <h1 className="p-new-gc__title">Novo GC</h1>
+  if (!formData) return null;
 
-      <form onSubmit={handleSubmit} className="p-new-gc__form">
-        <div className="p-new-gc__field">
+  return (
+    <div className="p-edit-gc">
+      <h1 className="p-edit-gc__title">Editar GC</h1>
+
+      <form onSubmit={handleSubmit} className="p-edit-gc__form">
+        <div className="p-edit-gc__field">
           <label htmlFor="title">Nome do GC</label>
           <input
             type="text"
@@ -63,7 +57,7 @@ export const NewGC = ({ onClose }) => {
           />
         </div>
 
-        <div className="p-new-gc__field">
+        <div className="p-edit-gc__field">
           <label htmlFor="leaders">Líderes</label>
           <input
             type="text"
@@ -75,20 +69,17 @@ export const NewGC = ({ onClose }) => {
           />
         </div>
 
-        <div className="p-new-gc__field">
+        <div className="p-edit-gc__field">
           <label htmlFor="contact">Contato</label>
-          <input
-            type="tel"
-            id="contact"
-            name="contact"
+          <PhoneInput
             value={formData.contact}
-            onChange={handleChange}
+            onChange={(e) => handleChange({ ...e, name: "contact" })}
             required
           />
         </div>
 
-        <div className="p-new-gc__row">
-          <div className="p-new-gc__field">
+        <div className="p-edit-gc__row">
+          <div className="p-edit-gc__field">
             <label htmlFor="data">Dia</label>
             <select
               id="data"
@@ -108,7 +99,7 @@ export const NewGC = ({ onClose }) => {
             </select>
           </div>
 
-          <div className="p-new-gc__field">
+          <div className="p-edit-gc__field">
             <label htmlFor="time">Horário</label>
             <input
               type="time"
@@ -121,7 +112,7 @@ export const NewGC = ({ onClose }) => {
           </div>
         </div>
 
-        <div className="p-new-gc__checkboxes">
+        <div className="p-edit-gc__checkboxes">
           <label>
             <input
               type="checkbox"
@@ -144,10 +135,10 @@ export const NewGC = ({ onClose }) => {
         </div>
 
         {!formData.isOnline && (
-          <fieldset className="p-new-gc__address">
+          <fieldset className="p-edit-gc__address">
             <legend>Endereço</legend>
 
-            <div className="p-new-gc__field">
+            <div className="p-edit-gc__field">
               <label htmlFor="address.street">Rua</label>
               <input
                 type="text"
@@ -159,8 +150,8 @@ export const NewGC = ({ onClose }) => {
               />
             </div>
 
-            <div className="p-new-gc__row">
-              <div className="p-new-gc__field">
+            <div className="p-edit-gc__row">
+              <div className="p-edit-gc__field">
                 <label htmlFor="address.number">Número</label>
                 <input
                   type="text"
@@ -172,7 +163,7 @@ export const NewGC = ({ onClose }) => {
                 />
               </div>
 
-              <div className="p-new-gc__field">
+              <div className="p-edit-gc__field">
                 <label htmlFor="address.neighborhood">Bairro</label>
                 <input
                   type="text"
@@ -187,12 +178,16 @@ export const NewGC = ({ onClose }) => {
           </fieldset>
         )}
 
-        <div className="p-new-gc__buttons">
-          <button type="button" className="p-new-gc__cancel" onClick={onClose}>
+        <div className="p-edit-gc__buttons">
+          <button
+            type="button"
+            className="p-edit-gc__cancel"
+            onClick={() => onClose()}
+          >
             Cancelar
           </button>
-          <button type="submit" className="p-new-gc__submit">
-            Criar GC
+          <button type="submit" className="p-edit-gc__submit">
+            Salvar Alterações
           </button>
         </div>
       </form>

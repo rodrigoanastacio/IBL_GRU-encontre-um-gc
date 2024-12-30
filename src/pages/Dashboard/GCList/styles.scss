@@ -1,7 +1,50 @@
 .p-gc-list {
-  &__title {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 2rem;
+  }
+
+  &__title {
     font-size: 1.5rem;
+    color: #1e293b;
+  }
+
+  &__new-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fece00;
+    color: #1e293b;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: darken(#fece00, 5%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fece00;
+      outline-offset: 2px;
+    }
+
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__filters {
+    margin-bottom: 2rem;
   }
 
   &__table {

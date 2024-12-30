@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { RiDashboardLine, RiGroupLine, RiAddLine } from "react-icons/ri";
+import { RiDashboardLine, RiGroupLine } from "react-icons/ri";
 import "./styles.scss";
 
 export const Sidebar = ({ isMobile, onLinkClick }) => {
@@ -32,14 +32,6 @@ export const Sidebar = ({ isMobile, onLinkClick }) => {
         >
           <RiGroupLine aria-hidden="true" />
           <span>GCs</span>
-        </NavLink>
-        <NavLink
-          to="/dashboard/gcs/new"
-          className="c-sidebar__link"
-          onClick={handleClick}
-        >
-          <RiAddLine aria-hidden="true" />
-          <span>Novo GC</span>
         </NavLink>
       </nav>
     </aside>

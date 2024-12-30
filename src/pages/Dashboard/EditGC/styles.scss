@@ -1,4 +1,4 @@
-.p-new-gc {
+.p-edit-gc {
   &__title {
     margin-bottom: 2rem;
     font-size: 1.5rem;
@@ -70,7 +70,6 @@
   &__buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem;
   }
 
   &__submit,
