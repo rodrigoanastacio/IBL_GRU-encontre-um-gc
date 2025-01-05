@@ -13,7 +13,8 @@ export const CepSearch = ({ onLocationFound, setIsLoading }) => {
 
     try {
       const addressData = await fetchAddressFromCep(cep);
-      const address = `${addressData.logradouro}, ${addressData.bairro}, ${addressData.localidade}, ${addressData.uf}, Brasil`;
+      const address = `${addressData.logradouro}, ${addressData.localidade}, ${addressData.uf}, Brasil`;
+      console.log("address", address);
       const coordinates = await geocodeAddress(address);
 
       onLocationFound({

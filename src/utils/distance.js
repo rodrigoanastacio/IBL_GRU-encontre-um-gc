@@ -27,7 +27,7 @@ export const calculateDistance = (lat1, lon1, lat2, lon2) => {
  * @param {number} limit Número máximo de GCs a retornar
  * @returns {Array} GCs ordenados por distância
  */
-export const findNearestGCs = (gcs, userCoords, limit = 5, maxDistance = 5) => {
+export const findNearestGCs = (gcs, userCoords, limit = 3, maxDistance = 3) => {
   return gcs
     .filter((gc) => !gc.isOnline)
     .map((gc) => ({
