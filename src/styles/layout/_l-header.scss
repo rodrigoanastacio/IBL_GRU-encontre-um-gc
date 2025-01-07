@@ -1,17 +1,19 @@
+@use "./../abstracts/mixins" as m;
+
 .l-header {
   padding: 1rem 0;
   background: url("/hero-bg.svg") center / cover no-repeat;
   height: 450px;
 
   &__container {
-    @include container();
+    @include m.container();
 
     display: grid;
     row-gap: 2.5rem;
   }
 
   &__brand {
-    @include flex-element(row, center, space-between);
+    @include m.flex-element(row, center, space-between);
   }
 
   &__logo {

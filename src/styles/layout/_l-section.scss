@@ -1,8 +1,10 @@
+@use "./../abstracts/mixins" as m;
+
 .l-section {
   padding: 5rem 0;
 
   &__container {
-    @include container();
+    @include m.container();
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

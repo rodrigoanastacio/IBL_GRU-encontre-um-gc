@@ -1,7 +1,6 @@
-@import "./abstracts/variables";
-@import "./abstracts/mixins";
+@use "./abstracts/mixins";
 
-@import "./base/reset";
+@use "./base/reset";
 
-@import "./layout/l-header";
-@import "./layout/l-section";
+@use "./layout/l-header";
+@use "./layout/l-section";
