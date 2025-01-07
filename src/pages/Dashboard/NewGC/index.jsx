@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { PhoneInput } from "../../../components/PhoneInput";
 import "./styles.scss";
 
 export const NewGC = ({ onClose }) => {
@@ -77,12 +79,9 @@ export const NewGC = ({ onClose }) => {
 
         <div className="p-new-gc__field">
           <label htmlFor="contact">Contato</label>
-          <input
-            type="tel"
-            id="contact"
-            name="contact"
+          <PhoneInput
             value={formData.contact}
-            onChange={handleChange}
+            onChange={(e) => handleChange({ ...e, name: "contact" })}
             required
           />
         </div>
@@ -143,49 +142,57 @@ export const NewGC = ({ onClose }) => {
           </label>
         </div>
 
-        {!formData.isOnline && (
-          <fieldset className="p-new-gc__address">
-            <legend>Endereço</legend>
+        <AnimatePresence>
+          {!formData.isOnline && (
+            <motion.fieldset
+              className="p-new-gc__address"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <legend>Endereço</legend>
 
-            <div className="p-new-gc__field">
-              <label htmlFor="address.street">Rua</label>
-              <input
-                type="text"
-                id="address.street"
-                name="address.street"
-                value={formData.addressDetails.street}
-                onChange={handleChange}
-                required={!formData.isOnline}
-              />
-            </div>
-
-            <div className="p-new-gc__row">
               <div className="p-new-gc__field">
-                <label htmlFor="address.number">Número</label>
+                <label htmlFor="address.street">Rua</label>
                 <input
                   type="text"
-                  id="address.number"
-                  name="address.number"
-                  value={formData.addressDetails.number}
+                  id="address.street"
+                  name="address.street"
+                  value={formData.addressDetails.street}
                   onChange={handleChange}
                   required={!formData.isOnline}
                 />
               </div>
 
-              <div className="p-new-gc__field">
-                <label htmlFor="address.neighborhood">Bairro</label>
-                <input
-                  type="text"
-                  id="address.neighborhood"
-                  name="address.neighborhood"
-                  value={formData.addressDetails.neighborhood}
-                  onChange={handleChange}
-                  required={!formData.isOnline}
-                />
+              <div className="p-new-gc__row">
+                <div className="p-new-gc__field">
+                  <label htmlFor="address.number">Número</label>
+                  <input
+                    type="text"
+                    id="address.number"
+                    name="address.number"
+                    value={formData.addressDetails.number}
+                    onChange={handleChange}
+                    required={!formData.isOnline}
+                  />
+                </div>
+
+                <div className="p-new-gc__field">
+                  <label htmlFor="address.neighborhood">Bairro</label>
+                  <input
+                    type="text"
+                    id="address.neighborhood"
+                    name="address.neighborhood"
+                    value={formData.addressDetails.neighborhood}
+                    onChange={handleChange}
+                    required={!formData.isOnline}
+                  />
+                </div>
               </div>
-            </div>
-          </fieldset>
-        )}
+            </motion.fieldset>
+          )}
+        </AnimatePresence>
 
         <div className="p-new-gc__buttons">
           <button type="button" className="p-new-gc__cancel" onClick={onClose}>
